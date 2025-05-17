@@ -1,0 +1,32 @@
+meta {
+  name: 2-3 Search patient
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseURL}}{{endpoint-prefix}}{{resource}}?q=Martha
+  body: none
+  auth: inherit
+}
+
+params:query {
+  q: Martha
+  ~v: full
+  ~purge: true
+  ~q: Jochen
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+vars:pre-request {
+  endpoint-prefix: rest/v1/
+  resource: patient
+}

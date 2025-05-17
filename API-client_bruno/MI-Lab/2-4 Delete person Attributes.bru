@@ -1,0 +1,36 @@
+meta {
+  name: 2-4 Delete person Attributes
+  type: http
+  seq: 12
+}
+
+delete {
+  url: {{baseURL}}{{endpoint-prefix}}{{resource}}?purge=true
+  body: json
+  auth: inherit
+}
+
+params:query {
+  purge: true
+  ~q: Martha
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  {
+      "birthdate": "1991-09-02"
+  }
+}
+
+vars:pre-request {
+  endpoint-prefix: rest/v1/
+  resource: person/d3d67813-dd39-4c9f-8535-067639b07bec
+}

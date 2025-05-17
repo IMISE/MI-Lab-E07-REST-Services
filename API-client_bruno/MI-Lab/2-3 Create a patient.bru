@@ -1,0 +1,42 @@
+meta {
+  name: 2-3 Create a patient
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{baseURL}}{{endpoint-prefix}}{{resource}}
+  body: json
+  auth: inherit
+}
+
+params:query {
+  ~q: Martha
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  {
+      "person": "34353141-b8b6-4cde-b921-fd6f397a5f2f",
+      "identifiers": [
+          {
+            "identifier": "ABC220190",
+              "identifierType": "d3153eb0-5e07-11ef-8f7c-0242ac120002",
+              "preferred": false
+          }
+      ]
+  }
+}
+
+vars:pre-request {
+  endpoint-prefix: rest/v1/
+  resource: patient
+}

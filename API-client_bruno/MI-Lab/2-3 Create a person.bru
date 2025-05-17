@@ -1,0 +1,42 @@
+meta {
+  name: 2-3 Create a person
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseURL}}{{endpoint-prefix}}{{resource}}
+  body: json
+  auth: inherit
+}
+
+params:query {
+  ~q: Martha
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  {
+      "names": [
+          {
+          "givenName": "Martha",
+          "familyName": "Mousepad"
+          }
+      ],
+      "gender": "F",
+      "birthdate": "1986-06-12"
+  }
+}
+
+vars:pre-request {
+  endpoint-prefix: rest/v1/
+  resource: person
+}

@@ -1,0 +1,35 @@
+meta {
+  name: 2-4 Update person Attributes
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{baseURL}}{{endpoint-prefix}}{{resource}}
+  body: json
+  auth: inherit
+}
+
+params:query {
+  ~q: Martha
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  {
+      "birthdate": "1986-06-13"
+  }
+}
+
+vars:pre-request {
+  endpoint-prefix: rest/v1/
+  resource: person/34353141-b8b6-4cde-b921-fd6f397a5f2f
+}

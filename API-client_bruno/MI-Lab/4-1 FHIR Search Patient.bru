@@ -1,0 +1,29 @@
+meta {
+  name: 4-1 FHIR Search Patient
+  type: http
+  seq: 16
+}
+
+get {
+  url: {{baseURL}}{{endpoint-prefix}}{{resource}}?name=Martha
+  body: none
+  auth: inherit
+}
+
+params:query {
+  name: Martha
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+vars:pre-request {
+  endpoint-prefix: fhir2/R4/
+  resource: Patient
+}

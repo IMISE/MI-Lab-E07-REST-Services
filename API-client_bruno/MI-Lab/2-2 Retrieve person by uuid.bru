@@ -1,0 +1,29 @@
+meta {
+  name: 2-2 Retrieve person by uuid
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseURL}}{{endpoint-prefix}}{{resource}}
+  body: none
+  auth: inherit
+}
+
+params:query {
+  ~q: Martha
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+vars:pre-request {
+  endpoint-prefix: rest/v1/
+  resource: person/34353141-b8b6-4cde-b921-fd6f397a5f2f
+}

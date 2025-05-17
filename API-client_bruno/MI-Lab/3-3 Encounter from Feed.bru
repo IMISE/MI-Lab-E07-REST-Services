@@ -1,0 +1,29 @@
+meta {
+  name: 3-3 Encounter from Feed
+  type: http
+  seq: 15
+}
+
+get {
+  url: {{baseURL}}{{endpoint-prefix}}{{resource}}?includeAll=true
+  body: none
+  auth: inherit
+}
+
+params:query {
+  includeAll: true
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+vars:pre-request {
+  endpoint-prefix: rest/v1/
+  resource: bahmnicore/bahmniencounter/5358604b-fd48-45ed-9663-fd38b374e83e
+}

@@ -1,0 +1,30 @@
+meta {
+  name: 2-2 Search person
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseURL}}{{endpoint-prefix}}{{resource}}?q=Martha
+  body: none
+  auth: inherit
+}
+
+params:query {
+  q: Martha
+  ~q: Jochen
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+vars:pre-request {
+  endpoint-prefix: rest/v1/
+  resource: person
+}

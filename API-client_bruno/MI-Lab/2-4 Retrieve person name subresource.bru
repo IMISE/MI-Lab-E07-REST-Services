@@ -1,0 +1,31 @@
+meta {
+  name: 2-4 Retrieve person name subresource
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{baseURL}}{{endpoint-prefix}}{{resource}}?v=full
+  body: none
+  auth: inherit
+}
+
+params:query {
+  v: full
+  ~q: Martha
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+vars:pre-request {
+  endpoint-prefix: rest/v1/
+  resource: person/34353141-b8b6-4cde-b921-fd6f397a5f2f/
+  ~resource: person/d3d67813-dd39-4c9f-8535-067639b07bec/name
+}

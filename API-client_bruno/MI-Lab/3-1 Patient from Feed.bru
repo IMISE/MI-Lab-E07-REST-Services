@@ -1,0 +1,29 @@
+meta {
+  name: 3-1 Patient from Feed
+  type: http
+  seq: 13
+}
+
+get {
+  url: {{baseURL}}{{endpoint-prefix}}{{resource}}?v=full
+  body: none
+  auth: inherit
+}
+
+params:query {
+  v: full
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+vars:pre-request {
+  endpoint-prefix: rest/v1/
+  resource: patient/34353141-b8b6-4cde-b921-fd6f397a5f2f
+}

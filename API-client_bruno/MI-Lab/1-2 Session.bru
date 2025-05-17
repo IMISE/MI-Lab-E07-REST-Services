@@ -1,0 +1,25 @@
+meta {
+  name: 1-2 Session
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseURL}}{{endpoint-prefix}}{{resource}}
+  body: none
+  auth: inherit
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+vars:pre-request {
+  endpoint-prefix: rest/v1/
+  resource: session
+}

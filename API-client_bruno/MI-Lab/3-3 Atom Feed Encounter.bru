@@ -1,0 +1,25 @@
+meta {
+  name: 3-3 Atom Feed Encounter
+  type: http
+  seq: 14
+}
+
+get {
+  url: {{baseURL}}{{endpoint-prefix}}{{resource}}
+  body: none
+  auth: inherit
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+vars:pre-request {
+  endpoint-prefix: atomfeed/
+  resource: encounter/recent
+}

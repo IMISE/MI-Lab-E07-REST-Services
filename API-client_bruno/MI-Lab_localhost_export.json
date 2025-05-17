@@ -1,0 +1,855 @@
+{
+  "name": "MI-Lab",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "1-2 Session",
+      "filename": "1-2 Session.bru",
+      "seq": 2,
+      "request": {
+        "url": "{{baseURL}}{{endpoint-prefix}}{{resource}}",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {
+          "req": [
+            {
+              "name": "endpoint-prefix",
+              "value": "rest/v1/",
+              "enabled": true,
+              "local": false
+            },
+            {
+              "name": "resource",
+              "value": "session",
+              "enabled": true,
+              "local": false
+            }
+          ]
+        },
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "2-2 Retrieve person by uuid",
+      "filename": "2-2 Retrieve person by uuid.bru",
+      "seq": 4,
+      "request": {
+        "url": "{{baseURL}}{{endpoint-prefix}}{{resource}}",
+        "method": "GET",
+        "headers": [],
+        "params": [
+          {
+            "name": "q",
+            "value": "Martha",
+            "type": "query",
+            "enabled": false
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {
+          "req": [
+            {
+              "name": "endpoint-prefix",
+              "value": "rest/v1/",
+              "enabled": true,
+              "local": false
+            },
+            {
+              "name": "resource",
+              "value": "person/34353141-b8b6-4cde-b921-fd6f397a5f2f",
+              "enabled": true,
+              "local": false
+            }
+          ]
+        },
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "2-2 Search person",
+      "filename": "2-2 Search person.bru",
+      "seq": 3,
+      "request": {
+        "url": "{{baseURL}}{{endpoint-prefix}}{{resource}}?q=Martha",
+        "method": "GET",
+        "headers": [],
+        "params": [
+          {
+            "name": "q",
+            "value": "Martha",
+            "type": "query",
+            "enabled": true
+          },
+          {
+            "name": "q",
+            "value": "Jochen",
+            "type": "query",
+            "enabled": false
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {
+          "req": [
+            {
+              "name": "endpoint-prefix",
+              "value": "rest/v1/",
+              "enabled": true,
+              "local": false
+            },
+            {
+              "name": "resource",
+              "value": "person",
+              "enabled": true,
+              "local": false
+            }
+          ]
+        },
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "2-3 Create a patient",
+      "filename": "2-3 Create a patient.bru",
+      "seq": 8,
+      "request": {
+        "url": "{{baseURL}}{{endpoint-prefix}}{{resource}}",
+        "method": "POST",
+        "headers": [],
+        "params": [
+          {
+            "name": "q",
+            "value": "Martha",
+            "type": "query",
+            "enabled": false
+          }
+        ],
+        "body": {
+          "mode": "json",
+          "json": "{\n    \"person\": \"34353141-b8b6-4cde-b921-fd6f397a5f2f\",\n    \"identifiers\": [\n        {\n          \"identifier\": \"ABC220190\",\n            \"identifierType\": \"d3153eb0-5e07-11ef-8f7c-0242ac120002\",\n            \"preferred\": false\n        }\n    ]\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {
+          "req": [
+            {
+              "name": "endpoint-prefix",
+              "value": "rest/v1/",
+              "enabled": true,
+              "local": false
+            },
+            {
+              "name": "resource",
+              "value": "patient",
+              "enabled": true,
+              "local": false
+            }
+          ]
+        },
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "2-3 Create a person",
+      "filename": "2-3 Create a person.bru",
+      "seq": 5,
+      "request": {
+        "url": "{{baseURL}}{{endpoint-prefix}}{{resource}}",
+        "method": "POST",
+        "headers": [],
+        "params": [
+          {
+            "name": "q",
+            "value": "Martha",
+            "type": "query",
+            "enabled": false
+          }
+        ],
+        "body": {
+          "mode": "json",
+          "json": "{\n    \"names\": [\n        {\n        \"givenName\": \"Martha\",\n        \"familyName\": \"Mousepad\"\n        }\n    ],\n    \"gender\": \"F\",\n    \"birthdate\": \"1986-06-12\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {
+          "req": [
+            {
+              "name": "endpoint-prefix",
+              "value": "rest/v1/",
+              "enabled": true,
+              "local": false
+            },
+            {
+              "name": "resource",
+              "value": "person",
+              "enabled": true,
+              "local": false
+            }
+          ]
+        },
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "2-3 List patientidentifiertype",
+      "filename": "2-3 List patientidentifiertype.bru",
+      "seq": 7,
+      "request": {
+        "url": "{{baseURL}}{{endpoint-prefix}}{{resource}}",
+        "method": "GET",
+        "headers": [],
+        "params": [
+          {
+            "name": "q",
+            "value": "Martha",
+            "type": "query",
+            "enabled": false
+          },
+          {
+            "name": "v",
+            "value": "full",
+            "type": "query",
+            "enabled": false
+          },
+          {
+            "name": "purge",
+            "value": "true",
+            "type": "query",
+            "enabled": false
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {
+          "req": [
+            {
+              "name": "endpoint-prefix",
+              "value": "rest/v1/",
+              "enabled": true,
+              "local": false
+            },
+            {
+              "name": "resource",
+              "value": "patientidentifiertype",
+              "enabled": true,
+              "local": false
+            }
+          ]
+        },
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "2-3 Search patient",
+      "filename": "2-3 Search patient.bru",
+      "seq": 6,
+      "request": {
+        "url": "{{baseURL}}{{endpoint-prefix}}{{resource}}?q=Martha",
+        "method": "GET",
+        "headers": [],
+        "params": [
+          {
+            "name": "q",
+            "value": "Martha",
+            "type": "query",
+            "enabled": true
+          },
+          {
+            "name": "v",
+            "value": "full",
+            "type": "query",
+            "enabled": false
+          },
+          {
+            "name": "purge",
+            "value": "true",
+            "type": "query",
+            "enabled": false
+          },
+          {
+            "name": "q",
+            "value": "Jochen",
+            "type": "query",
+            "enabled": false
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {
+          "req": [
+            {
+              "name": "endpoint-prefix",
+              "value": "rest/v1/",
+              "enabled": true,
+              "local": false
+            },
+            {
+              "name": "resource",
+              "value": "patient",
+              "enabled": true,
+              "local": false
+            }
+          ]
+        },
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "2-4 Delete person Attributes",
+      "filename": "2-4 Delete person Attributes.bru",
+      "seq": 12,
+      "request": {
+        "url": "{{baseURL}}{{endpoint-prefix}}{{resource}}?purge=true",
+        "method": "DELETE",
+        "headers": [],
+        "params": [
+          {
+            "name": "purge",
+            "value": "true",
+            "type": "query",
+            "enabled": true
+          },
+          {
+            "name": "q",
+            "value": "Martha",
+            "type": "query",
+            "enabled": false
+          }
+        ],
+        "body": {
+          "mode": "json",
+          "json": "{\n    \"birthdate\": \"1991-09-02\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {
+          "req": [
+            {
+              "name": "endpoint-prefix",
+              "value": "rest/v1/",
+              "enabled": true,
+              "local": false
+            },
+            {
+              "name": "resource",
+              "value": "person/d3d67813-dd39-4c9f-8535-067639b07bec",
+              "enabled": true,
+              "local": false
+            }
+          ]
+        },
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "2-4 Retrieve person name subresource",
+      "filename": "2-4 Retrieve person name subresource.bru",
+      "seq": 9,
+      "request": {
+        "url": "{{baseURL}}{{endpoint-prefix}}{{resource}}?v=full",
+        "method": "GET",
+        "headers": [],
+        "params": [
+          {
+            "name": "v",
+            "value": "full",
+            "type": "query",
+            "enabled": true
+          },
+          {
+            "name": "q",
+            "value": "Martha",
+            "type": "query",
+            "enabled": false
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {
+          "req": [
+            {
+              "name": "endpoint-prefix",
+              "value": "rest/v1/",
+              "enabled": true,
+              "local": false
+            },
+            {
+              "name": "resource",
+              "value": "person/34353141-b8b6-4cde-b921-fd6f397a5f2f/",
+              "enabled": true,
+              "local": false
+            },
+            {
+              "name": "resource",
+              "value": "person/d3d67813-dd39-4c9f-8535-067639b07bec/name",
+              "enabled": false,
+              "local": false
+            }
+          ]
+        },
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "2-4 Update person Attributes",
+      "filename": "2-4 Update person Attributes.bru",
+      "seq": 10,
+      "request": {
+        "url": "{{baseURL}}{{endpoint-prefix}}{{resource}}",
+        "method": "POST",
+        "headers": [],
+        "params": [
+          {
+            "name": "q",
+            "value": "Martha",
+            "type": "query",
+            "enabled": false
+          }
+        ],
+        "body": {
+          "mode": "json",
+          "json": "{\n    \"birthdate\": \"1986-06-13\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {
+          "req": [
+            {
+              "name": "endpoint-prefix",
+              "value": "rest/v1/",
+              "enabled": true,
+              "local": false
+            },
+            {
+              "name": "resource",
+              "value": "person/34353141-b8b6-4cde-b921-fd6f397a5f2f",
+              "enabled": true,
+              "local": false
+            }
+          ]
+        },
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "3-1 Atom Feed Patient",
+      "filename": "3-1 Atom Feed Patient.bru",
+      "seq": 12,
+      "request": {
+        "url": "{{baseURL}}{{endpoint-prefix}}{{resource}}",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {
+          "req": [
+            {
+              "name": "endpoint-prefix",
+              "value": "atomfeed/",
+              "enabled": true,
+              "local": false
+            },
+            {
+              "name": "resource",
+              "value": "/patient/recent",
+              "enabled": true,
+              "local": false
+            }
+          ]
+        },
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "3-1 Patient from Feed",
+      "filename": "3-1 Patient from Feed.bru",
+      "seq": 13,
+      "request": {
+        "url": "{{baseURL}}{{endpoint-prefix}}{{resource}}?v=full",
+        "method": "GET",
+        "headers": [],
+        "params": [
+          {
+            "name": "v",
+            "value": "full",
+            "type": "query",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {
+          "req": [
+            {
+              "name": "endpoint-prefix",
+              "value": "rest/v1/",
+              "enabled": true,
+              "local": false
+            },
+            {
+              "name": "resource",
+              "value": "patient/34353141-b8b6-4cde-b921-fd6f397a5f2f",
+              "enabled": true,
+              "local": false
+            }
+          ]
+        },
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "3-3 Atom Feed Encounter",
+      "filename": "3-3 Atom Feed Encounter.bru",
+      "seq": 14,
+      "request": {
+        "url": "{{baseURL}}{{endpoint-prefix}}{{resource}}",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {
+          "req": [
+            {
+              "name": "endpoint-prefix",
+              "value": "atomfeed/",
+              "enabled": true,
+              "local": false
+            },
+            {
+              "name": "resource",
+              "value": "encounter/recent",
+              "enabled": true,
+              "local": false
+            }
+          ]
+        },
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "3-3 Encounter from Feed",
+      "filename": "3-3 Encounter from Feed.bru",
+      "seq": 15,
+      "request": {
+        "url": "{{baseURL}}{{endpoint-prefix}}{{resource}}?includeAll=true",
+        "method": "GET",
+        "headers": [],
+        "params": [
+          {
+            "name": "includeAll",
+            "value": "true",
+            "type": "query",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {
+          "req": [
+            {
+              "name": "endpoint-prefix",
+              "value": "rest/v1/",
+              "enabled": true,
+              "local": false
+            },
+            {
+              "name": "resource",
+              "value": "bahmnicore/bahmniencounter/5358604b-fd48-45ed-9663-fd38b374e83e",
+              "enabled": true,
+              "local": false
+            }
+          ]
+        },
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "4-1 FHIR Search Observation",
+      "filename": "4-1 FHIR Search Observation.bru",
+      "seq": 17,
+      "request": {
+        "url": "{{baseURL}}{{endpoint-prefix}}{{resource}}?patient.name=Martha",
+        "method": "GET",
+        "headers": [],
+        "params": [
+          {
+            "name": "patient.name",
+            "value": "Martha",
+            "type": "query",
+            "enabled": true
+          },
+          {
+            "name": "name",
+            "value": "Martha",
+            "type": "query",
+            "enabled": false
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {
+          "req": [
+            {
+              "name": "endpoint-prefix",
+              "value": "fhir2/R4/",
+              "enabled": true,
+              "local": false
+            },
+            {
+              "name": "resource",
+              "value": "Observation",
+              "enabled": true,
+              "local": false
+            }
+          ]
+        },
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "4-1 FHIR Search Patient",
+      "filename": "4-1 FHIR Search Patient.bru",
+      "seq": 16,
+      "request": {
+        "url": "{{baseURL}}{{endpoint-prefix}}{{resource}}?name=Martha",
+        "method": "GET",
+        "headers": [],
+        "params": [
+          {
+            "name": "name",
+            "value": "Martha",
+            "type": "query",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {
+          "req": [
+            {
+              "name": "endpoint-prefix",
+              "value": "fhir2/R4/",
+              "enabled": true,
+              "local": false
+            },
+            {
+              "name": "resource",
+              "value": "Patient",
+              "enabled": true,
+              "local": false
+            }
+          ]
+        },
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    }
+  ],
+  "environments": [],
+  "root": {
+    "request": {
+      "auth": {
+        "mode": "basic",
+        "basic": {
+          "username": "superman",
+          "password": "Admin123"
+        }
+      },
+      "vars": {
+        "req": [
+          {
+            "name": "baseURL",
+            "value": "https://127.0.0.1:443/openmrs/ws/",
+            "enabled": true,
+            "local": false,
+            "uid": "uRb3HvfKTn3X6cZHFik7h"
+          }
+        ]
+      }
+    }
+  },
+  "brunoConfig": {
+    "version": "1",
+    "name": "MI-Lab",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ],
+    "presets": {
+      "requestType": "http",
+      "requestUrl": "{{baseURL}}"
+    },
+    "size": 0.006146430969238281,
+    "filesCount": 17
+  }
+}
